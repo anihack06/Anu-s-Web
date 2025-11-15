@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Aniket Harde — Portfolio</title>
+  <meta name="description" content="Portfolio of Aniket Harde — resume, projects, contact, and website links." />
+  <style>
+    /* New, richer dark theme palette */
+    :root {
+      --accent: #00AEEF; /* Vibrant Cyan-Blue */
+      --bg: #0D1117;    /* Deep GitHub Dark Blue/Black */
+      --card: #161B22;  /* Slightly Lighter Card Background */
+      --muted: #8B949E; /* Light Gray for Secondary Text */
+      --text: #C9D1D9;  /* Main Text Color */
+    }
+    * {
+      box-sizing: border-box;
+      transition: all 0.2s ease-out; /* Smooth transitions for hover effects */
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      /* Deep, textured background gradient */
+      background: linear-gradient(180deg, var(--bg) 0%, #080B10 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 24px auto;
+      padding: 0 20px;
+    }
+
+    /* --- Header & Profile Styling --- */
+    .top-header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 24px;
+      border-radius: 16px;
+      /* Subtle Glassmorphism Card Effect */
+      background: rgba(22, 27, 34, 0.7);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(201, 209, 217, 0.08);
+      /* Subtle blue glow/shadow */
+      box-shadow: 0 4px 60px rgba(0, 174, 239, 0.1), 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+    .profile-photo {
+      flex: 0 0 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      /* Vibrant accent ring */
+      border: 3px solid var(--accent);
+      background: #00AEEF;
+      box-shadow: 0 0 0 5px rgba(0, 174, 239, 0.2);
+    }
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .profile-info {
+      flex: 1;
+    }
+    .profile-info h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--accent);
+    }
+    .meta {
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .meta a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .meta a:hover {
+      text-decoration: underline;
+      color: #72dbff;
+    }
+
+    /* --- Secondary Navigation - Card Grid Styling --- */
+    .nav-links-grid {
+      display: grid;
+      /* Creates a responsive grid with minimum card width of 140px */
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .nav-card {
+      /* Reuses the card background but with lighter padding for links */
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      overflow: hidden;
+    }
+    
+    .nav-card a {
+      display: block; /* Makes the entire card area clickable */
+      padding: 18px 10px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--text); /* Main text color for better visibility */
+    }
+    
+    .nav-card:hover {
+      background: rgba(0, 174, 239, 0.15); /* Light blue tint on hover */
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 174, 239, 0.4);
+    }
+
+    /* --- Content Area --- */
+    .content {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
+    .card {
+      background: var(--card);
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+    }
+    .card h2, .card h3, .card h4 {
+      border-bottom: 2px solid rgba(0, 174, 239, 0.15);
+      padding-bottom: 8px;
+      margin-top: 0;
+      color: var(--text);
+      font-weight: 700;
+    }
+    .card h2 { font-size: 24px; }
+    .card h3 { font-size: 20px; }
+
+    .muted { color: var(--muted); }
+    .muted strong { color: var(--text); }
+    
+    .card ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    .card ul li {
+      margin-bottom: 5px;
+    }
+    .card a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- Call to Action Button --- */
+    .cta-button {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: var(--bg);
+      text-decoration: none;
+      font-weight: 800;
+      text-transform: uppercase;
+      box-shadow: 0 4px 20px rgba(0, 174, 239, 0.5);
+      border: none;
+      transition: all 0.3s;
+    }
+    .cta-button:hover {
+      background: #72dbff;
+      transform: scale(1.05);
+      box-shadow: 0 6px 30px rgba(0, 174, 239, 0.7);
+    }
+
+    /* --- Footer --- */
+    footer {
+      margin-top: 40px;
+      padding: 15px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* --- Responsive Adjustments --- */
+    @media(max-width: 1024px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media(max-width: 600px) {
+      .top-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px;
+      }
+      .profile-photo {
+        flex: 0 0 100px;
+        height: 100px;
+      }
+      .profile-info h1 {
+        font-size: 24px;
+      }
+      .meta {
+        font-size: 14px;
+      }
+      .nav-links-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header: profile photo + details -->
+    <header class="top-header">
+      <div class="profile-photo" aria-hidden>
+        <!-- Fallback image updated for better color matching -->
+        <img 
+          src="assets/profile.jpg" 
+          alt="Aniket Harde — profile photo" 
+          onerror="this.style.objectFit='contain';this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'100%\' height=\'100%\' fill=\'%2300AEEF%27/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'40\' fill=\'%230D1117%27 font-weight=\'bold\'>AN</text></svg>'" 
+        />
+      </div>
+
+      <div class="profile-info">
+        <h1>ANIKET HARDE</h1>
+        <div class="meta">Occupation: Student — Computer Engineering</div>
+        <div class="meta" style="margin-top:6px">College: Sandip Institute of Technology and Research Center, Nashik (SPPU)</div>
+        <div class="meta" style="margin-top:6px">Contact: 
+          <a href="mailto:hardeaniket06@gmail.com">hardeaniket06@gmail.com</a> | 
+          <a href="mailto:hardeaniket06@outlook.com">hardeaniket06@outlook.com</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Primary Navigation: Now structured as a grid of cards -->
+    <div class="nav-links-grid" aria-label="Primary navigation links">
+      <div class="nav-card">
+        <a href="resume.html">Resume</a>
+      </div>
+      <div class="nav-card">
+        <a href="project.html">Projects</a>
+      </div>
+      <div class="nav-card">
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-card">
+        <a href="web.html">Website Details</a>
+      </div>
+      <div class="nav-card">
+        <a href="#about">About</a>
+      </div>
+      <div class="nav-card">
+        <a href="#extras">More</a>
+      </div>
+    </div>
+
+    <main class="content">
+      <section>
+        <div class="card" id="about">
+          <h2>About Me</h2>
+          <p class="muted">I am an aspiring **Computer Engineering student** with a keen interest in **web development** and a focus on **cybersecurity** principles. This portfolio serves as a central hub for my professional work, showcasing my resume, project demos, and preferred contact methods. Use the navigation links above to explore individual sections.</p>
+
+        </div>
+
+        <div class="card" style="margin-top:24px" id="extras">
+          <h3 style="margin-top:0">Key Technologies</h3>
+          <p class="muted">I focus on building secure and high-performance applications using modern web standards. My skillset is primarily centered on the MERN stack and foundational programming languages.</p>
+          <ul class="muted" style="list-style-type: square;">
+            <li>**Front-end:** HTML5, CSS3, JavaScript (ES6+), React.js</li>
+            <li>**Back-end/Language:** Python, Node.js</li>
+            <li>**Concepts:** Cybersecurity fundamentals, Networking, Data Structures</li>
+          </ul>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3>Skills Summary</h3>
+          <p class="muted"><strong>Name:</strong> ANIKET HARDE</p>
+          <p class="muted"><strong>Contact:</strong> hardeaniket06@gmail.com</p>
+          <p class="muted"><strong>College:</strong> Sandip Institute of Technology and Research Center, Nashik</p>
+          <p class="muted"><strong>Core Skills:</strong> HTML • CSS • JavaScript • Python • Cybersecurity</p>
+          <div style="margin-top:20px">
+            <a href="resume.html" class="cta-button">Download Resume</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:24px">
+          <h4>Connect with Me</h4>
+          <p class="muted" style="margin-bottom: 0;">
+            <a href="https://github.com/anihack06" target="_blank" rel="noopener">GitHub</a> | 
+            <a href="www.linkedin.com/in/aniket-harde-48a405323" target="_blank" rel="noopener">LinkedIn</a>
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="muted">Designed and Developed by Aniket Harde.</div>
+    </footer>
+  </div>
+
+  <script>
+    // Smooth scroll for in-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        const t=document.querySelector(a.getAttribute('href'));
+        if(t) t.scrollIntoView({behavior:'smooth', block: 'start'});
+      })
+    })
+  </script>
+</body>
+</html>
