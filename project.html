@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Aniket Harde — Projects</title>
+  <meta name="description" content="Projects by Aniket Harde — web development and cybersecurity ." />
+  <style>
+    
+    :root {
+      --accent: #00AEEF; 
+      --bg: #0D1117;    
+      --card: #161B22;  
+      --muted: #8B949E; 
+      --text: #C9D1D9;  
+    }
+    * {
+      box-sizing: border-box;
+      transition: all 0.3s ease-out; /* Smooth transitions for hover effects */
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      background:linear-gradient(180deg,var(--bg) 0%, #080B10 100%);
+      color:var(--text);
+      line-height: 1.6;
+    }
+    .container{
+      max-width:1080px;
+      margin:28px auto;
+      padding:0 20px;
+    }
+    
+    /* Header Styling */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom:18px;
+    }
+    .title{
+      font-size:28px;
+      color:var(--accent);
+      font-weight:800;
+    }
+    .sub{
+      color:var(--muted);
+      font-size: 16px;
+      margin-top: 4px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:24px;
+      margin-top:24px;
+    }
+    
+    /* Project Card Styling */
+    .card{
+      background:var(--card);
+      padding:20px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.05);
+      box-shadow:0 4px 15px rgba(0,0,0,0.5);
+      cursor: default;
+    }
+
+    /* Card Glow on Hover */
+    .card:hover {
+        border-color: var(--accent);
+        box-shadow: 0 0 30px rgba(0, 174, 239, 0.25), 0 4px 15px rgba(0, 0, 0, 0.7); 
+        transform: translateY(-3px); 
+    }
+
+    .card h4{
+      margin:0 0 8px;
+      color:var(--text);
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .card p{
+      color:var(--muted);
+      margin:0 0 10px;
+      font-size: 15px;
+    }
+    .card p strong {
+      color: var(--text);
+    }
+    .tech{
+      font-size:13px;
+      color:var(--muted);
+      margin-bottom:15px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.05);
+    }
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .btn{
+      padding:10px 16px;
+      border-radius:10px;
+      border:none;
+      font-weight:700;
+      cursor:pointer;
+      text-decoration:none;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .btn.primary{
+      background:var(--accent);
+      color:var(--bg);
+      box-shadow: 0 2px 8px rgba(0, 174, 239, 0.4);
+    }
+    .btn.primary:hover {
+      background: #72dbff;
+      transform: translateY(-1px);
+    }
+    .btn.ghost{
+      background:transparent;
+      border:1px solid var(--accent);
+      color:var(--accent);
+    }
+    .btn.ghost:hover {
+      background: rgba(0, 174, 239, 0.15);
+      transform: translateY(-1px);
+    }
+    /* NEW: Disabled button styling */
+    .disabled-btn {
+        background: #333 !important;
+        border: 1px solid #444 !important;
+        color: #777 !important;
+        cursor: not-allowed !important;
+        box-shadow: none !important;
+        transform: none !important;
+        pointer-events: none; /* Prevents interaction */
+    }
+
+    .screenshot{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border-radius:10px;
+      margin-bottom:15px;
+      background:#081018;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      display:block
+    }
+    .muted{color:var(--muted)}
+    
+    footer{
+      margin-top:40px;
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    footer a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    @media(max-width:700px){.screenshot{height:160px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <div class="title">Projects — Aniket Harde</div>
+        <div class="sub"> web development, Python automation, and a beginner security tool.</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="btn ghost" href="index.html">Back to Portfolio</a>
+        <a class="btn primary" href="resume.html">View Resume</a>
+      </div>
+    </header>
+
+    <section class="grid">
+      
+      <!-- Project 1: Secure Notes Web App  -->
+      <article class="card">
+        <img class="screenshot" src="assets/project1.png" alt="Image" onerror="this.style.background='#09131a';this.alt='Image Not Present';"/>
+        <h4>SecureNotes — Encrypted Notes Web App</h4>
+        <p class="muted"><strong>Status:</strong> In Progress</p>
+        <p class="muted">A minimal, secure notes application that encrypts user notes in the browser before syncing to a simple backend. Built with privacy-first design: client-side encryption, password-derived keys, and a tiny REST API for storage.</p>
+        <div class="tech">Tech: HTML, CSS, JavaScript, Web Crypto API, Node.js (Express)</div>
+        <div class="actions">
+          <span class="btn primary disabled-btn">Live Demo (Simulated)</span>
+          <span class="btn ghost disabled-btn">View Code</span>
+        </div>
+      </article>
+
+      <!-- Project 2: Python Automation Toolkit  -->
+      <article class="card">
+        <img class="screenshot" src="assets/project2.png" alt="Automation toolkit Image Not Present" onerror="this.style.background='#08121a';this.alt='Image Not present';"/>
+        <h4>AutoTasks — Python Automation Toolkit</h4>
+        <p class="muted"><strong>Status:</strong> In Progress</p>
+        <p class="muted">A collection of **Python scripts to automate repetitive tasks**: file organizers, bulk renamers, simple web scrapers, and an email-notify utility. Focused on reliability and clear CLI usage for real productivity gains.</p>
+        <div class="tech">Tech: Python, requests, BeautifulSoup, argparse</div>
+        <div class="actions">
+          <span class="btn primary disabled-btn">View Code</span>
+          <span class="btn ghost disabled-btn">How it works</span>
+        </div>
+      </article>
+
+      <!-- Project 3: Mini PenTest Lab  -->
+      <article class="card">
+        <img class="screenshot" src="assets/project3.png" alt="Image Not Present" onerror="this.style.background='#071018';this.alt='Image Not Present';"/>
+        <h4>MiniPen — Beginner Penetration Testing Lab</h4>
+        <p class="muted"><strong>Status:</strong> In Development</p>
+        <p class="muted">A contained **lab environment** and a set of guides for beginners to practice basic web security testing (XSS, SQLi basics, and authentication flaws) in a legal, self-hosted setting. Emphasis on learning safe methodology and documentation.</p>
+        <div class="tech">Tech: Docker, OWASP Juice Shop, Bash, basic exploit demos</div>
+        <div class="actions">
+          <span class="btn primary disabled-btn">View Guides & Code</span>
+          <span class="btn ghost disabled-btn">Read Summary</span>
+        </div>
+      </article>
+      
+      <!-- Project 4: Simple Web Portfolio  -->
+      <article class="card">
+        <img class="screenshot" src="assets/web.png" alt="Simple Portfolio screenshot" onerror="this.style.background='#08101a';this.alt='Simple Portfolio screenshot (placeholder)';"/>
+        <h4>Personal Portfolio Site (V1)</h4>
+        <p class="muted"><strong>Status:</strong> Completed</p>
+        <p class="muted">The very site you are viewing! A responsive, single-page website demonstrating command over HTML, CSS, and interactive design principles. Focused on clean, fast loading, and cross-browser compatibility.</p>
+        <div class="tech">Tech: HTML5, CSS3, Responsive Design, Custom CSS Variables</div>
+        <div class="actions">
+          <a class="btn primary" href="index.html" target="_blank" rel="noopener">View Live Site</a>
+          <a class="btn ghost" href="index.html" target="_blank" rel="noopener">Self-Reference</a>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      
+      <div>Powered by Anu  </div>
+    </footer>
+  </div>
+
+  <script>
+   
+    console.log('Project buttons for SecureNotes, AutoTasks, and MiniPen are temporarily disabled.');
+  </script>
+</body>
+</html>
