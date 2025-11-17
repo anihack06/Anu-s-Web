@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Contact — Aniket Harde</title>
+  <meta name="description" content="Contact Aniket Harde — email, LinkedIn, Instagram, Facebook, WhatsApp." />
+  <style>
+    /* Inherit the Portfolio's Aesthetic */
+    :root{
+      --accent:#00AEEF;
+      --bg:#0D1117;
+      --card:#161B22;
+      --muted:#8B949E;
+      --text:#C9D1D9
+    }
+    * {
+      box-sizing: border-box;
+      transition: all 0.3s ease-out; 
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      background:linear-gradient(180deg,var(--bg) 0%, #080B10 100%);
+      color:var(--text);
+      line-height: 1.6;
+    }
+    .container{
+      max-width:1080px; /* Increased max-width for consistency */
+      margin:28px auto;
+      padding:0 20px;
+    }
+    
+    /* Header Styling */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom:24px;
+    }
+    .title{
+      font-size:28px;
+      color:var(--accent);
+      font-weight:800;
+    }
+    .sub{
+      color:var(--muted);
+      font-size: 16px;
+      margin-top: 4px;
+    }
+    
+    /* Grid Layout */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:24px;
+      margin-top:24px;
+    }
+    
+    /* Card Styling */
+    .card{
+      background:var(--card);
+      padding:24px; /* Increased padding */
+      border-radius:16px; /* Increased rounding */
+      border:1px solid rgba(255,255,255,0.05);
+      box-shadow:0 4px 15px rgba(0,0,0,0.5);
+      cursor: default;
+    }
+
+    /* --- Glow on Hover Effect for Cards --- */
+    .card:hover {
+        border-color: var(--accent);
+        box-shadow: 0 0 30px rgba(0, 174, 239, 0.25), 0 4px 15px rgba(0, 0, 0, 0.7); 
+        transform: translateY(-3px); /* Subtle lift */
+    }
+
+    .card h3{
+      margin:0 0 10px; /* Adjusted margin */
+      color:var(--text); /* Changed to main text color for contrast */
+      font-size: 20px;
+      font-weight: 700;
+      border-bottom: 2px solid rgba(0, 174, 239, 0.15);
+      padding-bottom: 8px;
+    }
+    .muted{color:var(--muted)}
+    .muted a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .muted a:hover {
+      text-decoration: underline;
+      color: #72dbff;
+    }
+
+    /* Button Styling */
+    .btn{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+      margin-top:12px;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .primary{
+      background:var(--accent);
+      color:var(--bg); /* Dark color from theme */
+      box-shadow: 0 2px 8px rgba(0, 174, 239, 0.4);
+    }
+    .primary:hover {
+      background: #72dbff;
+      transform: translateY(-1px);
+    }
+    .ghost{
+      background:transparent;
+      border:1px solid var(--accent);
+      color:var(--accent);
+    }
+    .ghost:hover {
+      background: rgba(0, 174, 239, 0.15);
+      transform: translateY(-1px);
+    }
+
+    .socials{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    
+    /* Footer */
+    footer{
+      margin-top:40px;
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    @media(max-width:720px){
+      header{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .title {
+        font-size: 24px;
+      }
+      .sub {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <div class="title">Contact & Socials</div>
+        <div class="sub">Email, LinkedIn, and social media — pick a channel and reach out.</div>
+      </div>
+      <div>
+        <a class="btn ghost" href="index.html">Back to Portfolio</a>
+      </div>
+    </header>
+
+    <section class="grid">
+      <!-- Email card -->
+      <div class="card">
+        <h3>Email</h3>
+        <p class="muted">Send a direct email. I check email regularly for opportunities and collaboration requests.</p>
+        <p class="muted"><strong>Primary:</strong> <a href="mailto:hardeaniket06@gmail.com">hardeaniket06@gmail.com</a></p>
+        <p class="muted"><strong>Alternate:</strong> <a href="mailto:hardeaniket06@outlook.com">hardeaniket06@outlook.com</a></p>
+        <a class="btn primary" href="mailto:hardeaniket06@gmail.com?subject=Opportunity%20via%20Portfolio&body=Hi%20Aniket%2C%0A%0AI%20saw%20your%20portfolio%20and%20would%20like%20to%20connect%20about%20a%20project%2Fopportunity.%20Please%20let%20me%20know%20a%20good%20time%20to%20chat.%0A%0AThanks%2C%0A">Send Email</a>
+      </div>
+
+      <!-- LinkedIn card -->
+      <div class="card">
+        <h3>LinkedIn</h3>
+        <p class="muted">Connect with me professionally — I share project updates, technical notes, and networking posts there.</p>
+        <p class="muted"><strong>Profile:</strong> <a href="https://www.linkedin.com/in/aniket-harde-48a405323" target="_blank" rel="noopener noreferrer">Aniket Harde</a></p>
+        <a class="btn primary" href="https://www.linkedin.com/in/aniket-harde-48a405323" target="_blank" rel="noopener noreferrer">View Profile</a>
+      </div>
+
+      <!-- Social Media card -->
+      <div class="card">
+        <h3>Social Channels</h3>
+        <p class="muted">Follow for quick updates, behind-the-scenes project work, and short tutorials.</p>
+        <div class="socials">
+          <a class="btn ghost" href="https://instagram.com/aniket_harde_96.k" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a class="btn ghost" href="https://facebook.com/Aniket Harde" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a class="btn ghost" href="https://t.me/8262000736" target="_blank" rel="noopener noreferrer">Telegram</a>
+        </div>
+        
+      </div>
+
+      <!-- WhatsApp card -->
+      <div class="card">
+        <h3>Quick Chat</h3>
+        <p class="muted">Quick chat for hiring, quick questions, or rapid coordination. Use the button below to open WhatsApp with a pre-filled message.</p>
+        <p class="muted"><strong>Phone:</strong> +91 8999820391</p>
+      
+        <a class="btn primary" href="https://wa.me/918999820391?text=Hi%20Aniket%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20opportunity.%20Can%20we%20talk%3F" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+      </div>
+
+    </section>
+
+    <footer>
+      <div class="muted">Powered By Anu</div>
+    </footer>
+  </div>
+</body>
+</html>
